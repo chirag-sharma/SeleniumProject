@@ -1,0 +1,22 @@
+package excelPackage;
+
+import java.io.FileInputStream;
+
+public class ExcelDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FileInputStream fis = new FileInputStream(System.getProperty(user.dir)+"\\TestExcel.xlsx");
+		
+		
+		
+		
+		
+		
+		
+		
+		fis.close();
+
+	}
+
+}

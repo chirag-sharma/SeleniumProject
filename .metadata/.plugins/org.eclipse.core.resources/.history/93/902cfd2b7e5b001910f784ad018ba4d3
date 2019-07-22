@@ -1,0 +1,42 @@
+package excelPackage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelDemo {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\TestExcel.xlsx");
+		//Creating instance of Excel
+		XSSFWorkbook book = new XSSFWorkbook(fis);
+		
+		
+		int sheetCount = book.getNumberOfSheets();
+		int counter;
+		for(counter=0;counter<sheetCount;counter++) {
+			if(book.getSheetName(counter).equalsIgnoreCase("testdata")) {
+				XSSFSheet sheet  = book.getSheetAt(counter);
+				int rowCount = sheet.getLastRowNum();
+				for(int i=0; i<rowCount; i++) {
+					XSSFRow row = sheet.getRow(i);
+					int colNum = row.getLastCellNum();
+				}
+			}
+		}
+		
+		
+		
+		
+		
+		
+		fis.close();
+
+	}
+
+}
